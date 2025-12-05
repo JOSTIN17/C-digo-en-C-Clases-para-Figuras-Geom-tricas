@@ -1,82 +1,70 @@
-using System;
+// Clase Circulo: Encapsula el radio y proporciona métodos para calcular área y perímetro.
+class Circulo {
 
-// Clase Circulo: Encapsula el radio y proporciona métodos para calcular el área y el perímetro.
-public class Circulo
-{
-    // Atributo privado que almacena el radio del círculo (encapsulamiento).
+    // Atributo privado (encapsulamiento)
     private double radio;
 
-    // Constructor que recibe el valor del radio al crear el objeto.
-    public Circulo(double radio)
-    {
+    // Constructor
+    public Circulo(double radio) {
         this.radio = radio;
     }
 
-    // CalcularArea es una función que devuelve un valor double.
-    // Se utiliza para calcular el área de un círculo.
-    // Fórmula: π * radio^2
-    public double CalcularArea()
-    {
+    // Calcula el área del círculo.
+    // Fórmula: PI * r^2
+    public double calcularArea() {
         return Math.PI * radio * radio;
     }
 
-    // CalcularPerimetro es una función que devuelve un valor double.
-    // Calcula la longitud de la circunferencia.
-    // Fórmula: 2 * π * radio
-    public double CalcularPerimetro()
-    {
+    // Calcula el perímetro del círculo.
+    // Fórmula: 2 * PI * r
+    public double calcularPerimetro() {
         return 2 * Math.PI * radio;
     }
 }
 
 
-// Clase Rectangulo: Encapsula largo y ancho, y contiene métodos para área y perímetro.
-public class Rectangulo
-{
+// Clase Rectangulo: almacena largo y ancho y calcula área y perímetro.
+class Rectangulo {
+
     private double largo;
     private double ancho;
 
-    // Constructor que inicializa las dimensiones del rectángulo.
-    public Rectangulo(double largo, double ancho)
-    {
+    // Constructor
+    public Rectangulo(double largo, double ancho) {
         this.largo = largo;
         this.ancho = ancho;
     }
 
     // Calcula el área del rectángulo.
-    // Fórmula: largo * ancho
-    public double CalcularArea()
-    {
+    public double calcularArea() {
         return largo * ancho;
     }
 
-    // Calcula el perímetro del rectángulo.
-    // Fórmula: 2 * (largo + ancho)
-    public double CalcularPerimetro()
-    {
+    // Calcula el perímetro.
+    public double calcularPerimetro() {
         return 2 * (largo + ancho);
     }
 }
 
 
-// Clase principal para ejecutar y mostrar los resultados.
-public class Program
-{
-    public static void Main()
-    {
-        // Crear un objeto Circulo con radio 5
+// Clase principal para ejecutar el programa
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Crear un objeto Circulo
         Circulo c = new Circulo(5);
 
-        Console.WriteLine("=== CÍRCULO ===");
-        Console.WriteLine("Área: " + c.CalcularArea());
-        Console.WriteLine("Perímetro: " + c.CalcularPerimetro());
-        Console.WriteLine();
+        System.out.println("=== CÍRCULO ===");
+        System.out.println("Área: " + c.calcularArea());
+        System.out.println("Perímetro: " + c.calcularPerimetro());
+        System.out.println();
 
-        // Crear un objeto Rectangulo con largo 4 y ancho 7
+        // Crear un objeto Rectangulo
         Rectangulo r = new Rectangulo(4, 7);
 
-        Console.WriteLine("=== RECTÁNGULO ===");
-        Console.WriteLine("Área: " + r.CalcularArea());
-        Console.WriteLine("Perímetro: " + r.CalcularPerimetro());
+        System.out.println("=== RECTÁNGULO ===");
+        System.out.println("Área: " + r.calcularArea());
+        System.out.println("Perímetro: " + r.calcularPerimetro());
     }
 }
